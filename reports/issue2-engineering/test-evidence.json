@@ -1,0 +1,58 @@
+{
+  "classification": "LOCAL_TESTS_ONLY_NO_COLAB_ALLOCATION",
+  "source_sha": "46f5bbe1685d7242b96c3d35337a3dd2ca39f41b",
+  "baseline_sha": "77b1027aaaa89ad0f08919b3c96cff41da299030",
+  "utc_start": "2026-10-20T14:05:34.452852+00:00",
+  "python": "3.12.14",
+  "platform": "Windows",
+  "tests": [
+    {
+      "pattern": "test_environment_preflight.py",
+      "exit_code": 0,
+      "elapsed_seconds": 5.4060000000026776,
+      "output": "test_cli_resolution_and_missing_cli (test_environment_preflight.PreflightTests.test_cli_resolution_and_missing_cli) ... ok\ntest_default_preflight_does_not_install_or_contact_provider (test_environment_preflight.PreflightTests.test_default_preflight_does_not_install_or_contact_provider) ... ok\ntest_diagnostic_timeout_caps_scalar_and_tuple (test_environment_preflight.PreflightTests.test_diagnostic_timeout_caps_scalar_and_tuple) ... ok\ntest_exact_export_ignores_dirty_crlf_worktree_and_local_pip_paths (test_environment_preflight.PreflightTests.test_exact_export_ignores_dirty_crlf_worktree_and_local_pip_paths) ... ok\ntest_git_or_cli_timeout_is_bounded_and_safe (test_environment_preflight.PreflightTests.test_git_or_cli_timeout_is_bounded_and_safe) ... ok\ntest_invalid_sha_before_any_command (test_environment_preflight.PreflightTests.test_invalid_sha_before_any_command) ... ok\ntest_nonwritable_temp_stops_before_pip (test_environment_preflight.PreflightTests.test_nonwritable_temp_stops_before_pip) ... ok\ntest_portable_diagnostic_shebang_no_hardcoded_home (test_environment_preflight.PreflightTests.test_portable_diagnostic_shebang_no_hardcoded_home) ... ok\ntest_reject_synced_or_checkout_temp (test_environment_preflight.PreflightTests.test_reject_synced_or_checkout_temp) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 5.201s\n\nOK\n"
+    },
+    {
+      "pattern": "test_colab_control.py",
+      "exit_code": 0,
+      "elapsed_seconds": 5.4060000000026776,
+      "output": "test_existing_output_not_overwritten (test_colab_control.ControllerTests.test_existing_output_not_overwritten) ... ok\ntest_existing_sessions_not_touched (test_colab_control.ControllerTests.test_existing_sessions_not_touched) ... ok\ntest_expired_work_budget_still_stops (test_colab_control.ControllerTests.test_expired_work_budget_still_stops) ... ok\ntest_failed_cleanup_never_passes (test_colab_control.ControllerTests.test_failed_cleanup_never_passes) ... ok\ntest_hash_mismatch (test_colab_control.ControllerTests.test_hash_mismatch) ... ok\ntest_interrupt_stops (test_colab_control.ControllerTests.test_interrupt_stops) ... ok\ntest_partial_new_failure_stops (test_colab_control.ControllerTests.test_partial_new_failure_stops) ... ok\ntest_preflight_failure_keeps_timed_child_report (test_colab_control.ControllerTests.test_preflight_failure_keeps_timed_child_report) ... ok\ntest_preflight_only_never_calls_provider (test_colab_control.ControllerTests.test_preflight_only_never_calls_provider) ... ok\ntest_probe_failure_skips_work_and_cleans_up (test_colab_control.ControllerTests.test_probe_failure_skips_work_and_cleans_up) ... ok\ntest_probe_timeout_has_short_bound (test_colab_control.ControllerTests.test_probe_timeout_has_short_bound) ... ok\ntest_quota_blocks_allocation (test_colab_control.ControllerTests.test_quota_blocks_allocation) ... ok\ntest_real_local_child_timeout_still_cleans_up (test_colab_control.ControllerTests.test_real_local_child_timeout_still_cleans_up) ... ok\ntest_success_defaults_to_probe_before_work_and_download (test_colab_control.ControllerTests.test_success_defaults_to_probe_before_work_and_download) ... ok\ntest_unavailable_cli_blocks_before_provider (test_colab_control.ControllerTests.test_unavailable_cli_blocks_before_provider) ... ok\ntest_work_hang_preserves_cleanup_reserve (test_colab_control.ControllerTests.test_work_hang_preserves_cleanup_reserve) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 5.185s\n\nOK\n"
+    }
+  ],
+  "new_colab_sessions": 0,
+  "live_numerical_runs": {
+    "cpu": "NOT_RUN",
+    "gpu": "NOT_RUN",
+    "tpu": "NOT_RUN"
+  },
+  "per_attempt_approvals_actual": null,
+  "api_escalation_requests_actual": null,
+  "events": {
+    "github_publication": null
+  },
+  "development_failures": [
+    "Sandbox temporary-directory access denied on first local test run; rerun outside sandbox used normal OS temp",
+    "Fake CLI fixture omitted stdout newline before stderr; 9 intended allocation-path tests stopped at entitlement gate; fixture corrected, all scenarios rerun"
+  ],
+  "baseline_before": "Static inspection: fixed pilot date/session/home; import starts flow; kernel smoke conditional on diagnostics. Old live controller was not rerun.",
+  "after": "Observed tests below; cannot establish live Colab behavior or causal remedy for the prior GPU timeout.",
+  "unchanged_paths_verified": [
+    ".sae",
+    "src",
+    "tests/test_range_finder.py",
+    "scripts/colab_remote.py",
+    "scripts/kernel_smoke.py",
+    "reports/pilot-20261020",
+    "framework-snapshot.json"
+  ],
+  "status": "PASS",
+  "elapsed_seconds": 10.889999999999418,
+  "utc_end": "2026-10-20T14:05:45.429086+00:00",
+  "source_file_sha256": {
+    "scripts/colab_control.py": "04ef2548041057c38e65d7efd29a4a0a0e231bf051faa7b435759cfc84e92a37",
+    "scripts/colab_entry.py": "c408f09a6a993fcce3a3dc9408b16513028aa4c81785874eaf297f0dcd2d44b7",
+    "scripts/environment_preflight.py": "d5a16da9ce993ae0e95a4df2b1a7d220de9564eddcea6d553ba17e634004be2b",
+    "tests/test_colab_control.py": "25b206d71428fec61341dfcfa73fedf356f3cb2b5ebe2001a0632147c0350f84",
+    "tests/test_environment_preflight.py": "96e6b6521a17b90ab5bbabdff6fa80108216d8dee07346f9d574f981069e5d27"
+  }
+}

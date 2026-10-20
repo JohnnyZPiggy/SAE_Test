@@ -1,0 +1,14 @@
+test_cli_resolution_and_missing_cli (test_environment_preflight.PreflightTests.test_cli_resolution_and_missing_cli) ... ok
+test_default_preflight_does_not_install_or_contact_provider (test_environment_preflight.PreflightTests.test_default_preflight_does_not_install_or_contact_provider) ... ok
+test_diagnostic_timeout_caps_scalar_and_tuple (test_environment_preflight.PreflightTests.test_diagnostic_timeout_caps_scalar_and_tuple) ... ok
+test_exact_export_ignores_dirty_crlf_worktree_and_local_pip_paths (test_environment_preflight.PreflightTests.test_exact_export_ignores_dirty_crlf_worktree_and_local_pip_paths) ... ok
+test_git_or_cli_timeout_is_bounded_and_safe (test_environment_preflight.PreflightTests.test_git_or_cli_timeout_is_bounded_and_safe) ... ok
+test_invalid_sha_before_any_command (test_environment_preflight.PreflightTests.test_invalid_sha_before_any_command) ... ok
+test_nonwritable_temp_stops_before_pip (test_environment_preflight.PreflightTests.test_nonwritable_temp_stops_before_pip) ... ok
+test_portable_diagnostic_shebang_no_hardcoded_home (test_environment_preflight.PreflightTests.test_portable_diagnostic_shebang_no_hardcoded_home) ... ok
+test_reject_synced_or_checkout_temp (test_environment_preflight.PreflightTests.test_reject_synced_or_checkout_temp) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 5.201s
+
+OK

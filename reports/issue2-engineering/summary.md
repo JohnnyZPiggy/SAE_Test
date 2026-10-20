@@ -1,0 +1,23 @@
+# Issue 2 — local engineering validation, GPT review pending
+
+Baseline: `77b1027aaaa89ad0f08919b3c96cff41da299030` (merged PR 1). Tested code: `46f5bbe1685d7242b96c3d35337a3dd2ca39f41b`. Evidence publication adds reports only. Source file hashes and full Windows unittest output are in [test-evidence.json](test-evidence.json); [WSL test results](wsl-test-evidence.json) and [real local-only preflight](../issue2-final-preflight/colab-control.json) are separate.
+
+Before (static baseline inspection, not a replay of its live flow): controller executes on import; date/session and diagnostic interpreter home are fixed to the original pilot; kernel probe runs only with diagnostics. After (observed): import is inert; parameters supply run identity/device/budgets/executable; preflight checks source/temp in the production shell; every allocation path in fake tests probes before scientific execution; failures enter finite finally cleanup. No new service/agent/approval stage or automatic dependency/login fallback.
+
+| Real local validation | Result | Observed runtime |
+|---|---|---:|
+| Windows Python 3.12.14 preflight tests | 9 PASS | 5.201 s reported by unittest |
+| Windows controller/fault tests | 16 PASS | 5.185 s reported by unittest |
+| WSL Python 3.12.3 preflight tests | 9 PASS | 0.498 s |
+| WSL controller/fault tests | 16 PASS | 5.357 s |
+| Existing WSL CLI 0.7.4, local-only preflight | PREFLIGHT_PASS | 2.332906 s total |
+
+The Windows capture process measured 10.890 s across both suites including process startup. The WSL preflight verified the tested full commit and exported 125 exact blobs in 0.251212 s. Its `commands` array is empty and `created=false`: no provider session command ran. The dirty-tree flag is true because local historical scratch files/new reports were present; the export uses Git objects rather than their checkout bytes. Transport scripts have their own hashes. The earlier development preflight against merged main also passed (121 blobs); it is not presented as validation of the later code.
+
+The 16 controller tests cover successful order/default short probe, failed/unreachable probe, external probe timeout, workload hang, budget exhaustion with reserved stop, hash mismatch, partial allocation failure, interrupt, failed cleanup, unrelated active sessions, exhausted entitlement, preflight-only, preexisting output protection, unavailable executable and failed-preflight telemetry. All provider commands are fake. One test actually starts and terminates a sleeping local Python child using the controller's external timeout; it never starts Colab. The 9 preflight tests use real temporary Git commits (including a dirty CRLF checkout) and mocked CLI/pip to verify exact export, writable isolated pip paths, no implicit install/provider call, invalid SHA, unsafe/synced temp rejection, temp permission failure, timeout, PATH resolution, portable diagnostic Python and scalar/tuple timeout caps.
+
+Initial development attempts were not all green: the sandbox denied OS-temp operations (14 test errors); retry with normal OS-temp access exposed a fake-output fixture missing a newline before stderr (9 scenario failures), corrected before final runs. These were local environment/test-harness failures, not new scientific failures. No before-baseline live replay or new CPU numerical oracle, Colab GPU/TPU, native compilation, real pip install or live fast-start/cleanup run occurred. Mock success is not hardware PASS. The original GPU timeout's root cause remains unproven; this change bounds diagnosis, not its cause.
+
+Verified unchanged from merged main: `.sae/`, `framework-snapshot.json`, all `src/`, original numerical tests, `scripts/colab_remote.py`, `scripts/kernel_smoke.py`, and every historical `reports/pilot-20261020` file. No Actions, background process/service, purchase, billing change or additional approval workflow was added. Reports omit raw CLI output/argv, private roots and OAuth/session URLs. Human approval counts remain unknown; this engineer command is one user relay, and routine host sandbox escalation requests are distinct from science/compute signoff.
+
+Limits: authentication/entitlement and live provider behavior were not exercised. Missing CLI/pip/build prerequisites stop with a code; no automatic installation/login. Default local preflight does not install; explicit temporary pip installation was tested with a fake pip process only. Final GitHub publication timestamp/PR head will be reported by the verified Issue/PR receipt; unobserved event fields remain null rather than prefilled success. Engineering acceptance and merge belong to GPT Architect.
