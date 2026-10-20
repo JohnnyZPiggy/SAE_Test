@@ -23,3 +23,5 @@ python -m torch_rand_range_lab.benchmarks.run --device cpu --source-sha dc055f42
 ```
 
 The benchmark's NumPy tensor interop dependency is declared in package metadata. The recorded tested candidate predates this metadata correction; all algorithm/test Python files are unchanged. Use the exact candidate installation command in the [engineering handoff](docs/engineering/range-finder-engineering.md) for reproducibility. A supplied SHA label alone does not prove the working tree matches it.
+
+For local-only environment checks and the bounded existing-CLI controller, see [Environment Preflight / Colab Fast Start](docs/engineering/environment-preflight.md). Its fake-CLI tests are separate from the historical numerical experiments.
