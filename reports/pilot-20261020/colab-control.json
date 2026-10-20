@@ -1,0 +1,87 @@
+{
+  "status": "FAIL",
+  "source_sha": "dc055f42ea9d7f5318cc52b936305cfa3c733fc2",
+  "created": true,
+  "cleanup_confirmed": true,
+  "utc_start": "2026-10-20T13:22:29.472409+00:00",
+  "commands": [
+    {
+      "command": [
+        "sessions"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.4307044650000051,
+      "output": "[colab] No active sessions found on server.\n"
+    },
+    {
+      "command": [
+        "usage"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.3960685899999987,
+      "output": "Current balance: 62.67 compute units\nUsage rate: 0.00/hr\nActive assignments: 0\n"
+    },
+    {
+      "command": [
+        "new",
+        "-s",
+        "sae37-range-20261020",
+        "--gpu",
+        "T4"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.9394290590000054,
+      "output": "[colab] Creating session 'sae37-range-20261020'...\n[colab] Session READY.\n"
+    },
+    {
+      "command": [
+        "exec",
+        "-s",
+        "sae37-range-20261020",
+        "-f",
+        "/mnt/d/Dropbox/study/ms-phd/PHD-EPFL/Doctoral proposal/EPFL/small interesting research/colab env/SAE_Test/scripts/colab_remote.py",
+        "--timeout",
+        "420",
+        "--env",
+        "SAE_SOURCE_SHA=dc055f42ea9d7f5318cc52b936305cfa3c733fc2"
+      ],
+      "exit_code": -1,
+      "elapsed_seconds": 440.04401093399997,
+      "output": "TIMEOUT; captured partial output omitted"
+    },
+    {
+      "command": [
+        "stop",
+        "-s",
+        "sae37-range-20261020"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.6382084340000347,
+      "output": "[colab] Stopping session 'sae37-range-20261020'...\n[colab] Session terminated.\n"
+    },
+    {
+      "command": [
+        "sessions"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.4116088780000382,
+      "output": "[colab] No active sessions found on server.\n"
+    },
+    {
+      "command": [
+        "usage"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.4229514789999484,
+      "output": "Current balance: 62.63 compute units\nUsage rate: 0.00/hr\nActive assignments: 0\n"
+    }
+  ],
+  "usage_before": "Current balance: 62.67 compute units\nUsage rate: 0.00/hr\nActive assignments: 0\n",
+  "error": "RuntimeError: exec exit -1: TIMEOUT; captured partial output omitted",
+  "utc_cleanup_verified": "2026-10-20T13:29:46.231445+00:00",
+  "allocation_lifecycle_seconds": 447.03371131399996,
+  "cleanup_seconds": 3.0500548469999558,
+  "usage_after": "Current balance: 62.63 compute units\nUsage rate: 0.00/hr\nActive assignments: 0\n",
+  "total_seconds": 451.29176512199996,
+  "utc_end": "2026-10-20T13:29:47.654496+00:00"
+}

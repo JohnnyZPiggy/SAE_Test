@@ -1,0 +1,118 @@
+{
+  "source_sha": "dc055f42ea9d7f5318cc52b936305cfa3c733fc2",
+  "cpu": {
+    "status": "PASS",
+    "cases": {
+      "exact_rank16_seed42": {
+        "max_relative_residual": 4.6495810579472163e-07,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 5.960464477539062e-07
+      },
+      "exact_rank16_seed123": {
+        "max_relative_residual": 4.5615882982019684e-07,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 7.152557373046875e-07
+      },
+      "exact_rank16_seed2026": {
+        "max_relative_residual": 4.819254968424502e-07,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 5.960464477539062e-07
+      },
+      "slow_full_rank_diagnostic": {
+        "max_relative_residual": 0.6518239974975586,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 4.76837158203125e-07
+      },
+      "zero": {
+        "max_relative_residual": 0.0,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 0.0
+      },
+      "zero_sketch": {
+        "max_relative_residual": 0.7637694478034973,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 0.0
+      },
+      "singleton": {
+        "max_relative_residual": 0.0,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 0.0
+      },
+      "wide": {
+        "max_relative_residual": 2.577490363364632e-07,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 2.384185791015625e-07
+      },
+      "float64": {
+        "max_relative_residual": 5.628856412072293e-16,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 4.440892098500626e-16
+      },
+      "single_matrix": {
+        "max_relative_residual": 2.1225375235189858e-07,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 1.1920928955078125e-07
+      }
+    },
+    "edge_contract": "Zero/rank-deficient sketches: finite orthonormal completion; no rank estimate or universal accuracy bound. Nonfinite inputs outside contract."
+  },
+  "gpu": {
+    "status": "PASS",
+    "cases": {
+      "exact_rank16_seed42": {
+        "max_relative_residual": 4.242399143095099e-07,
+        "max_projection_disagreement": 5.041767394686758e-07,
+        "max_orthogonality_error": 4.76837158203125e-07
+      },
+      "exact_rank16_seed123": {
+        "max_relative_residual": 4.510878568453336e-07,
+        "max_projection_disagreement": 5.638034963340033e-07,
+        "max_orthogonality_error": 5.960464477539062e-07
+      },
+      "exact_rank16_seed2026": {
+        "max_relative_residual": 4.3309736952323874e-07,
+        "max_projection_disagreement": 5.186454359318304e-07,
+        "max_orthogonality_error": 5.960464477539062e-07
+      },
+      "slow_full_rank_diagnostic": {
+        "max_relative_residual": 0.6518239974975586,
+        "max_projection_disagreement": 3.621255473262863e-07,
+        "max_orthogonality_error": 3.5762786865234375e-07
+      },
+      "zero": {
+        "max_relative_residual": 0.0,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 0.0
+      },
+      "zero_sketch": {
+        "max_relative_residual": 0.7637694478034973,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 0.0
+      },
+      "singleton": {
+        "max_relative_residual": 0.0,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 0.0
+      },
+      "wide": {
+        "max_relative_residual": 2.420155169602367e-07,
+        "max_projection_disagreement": 3.261158383338625e-07,
+        "max_orthogonality_error": 3.5762786865234375e-07
+      },
+      "float64": {
+        "max_relative_residual": 6.4223671776601e-16,
+        "max_projection_disagreement": 7.687947818652133e-16,
+        "max_orthogonality_error": 5.551115123125783e-16
+      },
+      "single_matrix": {
+        "max_relative_residual": 2.1868395094770676e-07,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 2.980232238769531e-07
+      }
+    },
+    "edge_contract": "Zero/rank-deficient sketches: finite orthonormal completion; no rank estimate or universal accuracy bound. Nonfinite inputs outside contract."
+  },
+  "tpu": {
+    "status": "NOT_RUN"
+  }
+}

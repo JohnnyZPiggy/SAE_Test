@@ -1,0 +1,61 @@
+{
+  "run_id": "pilot-20261020",
+  "framework_sha": "3fa17c605fbd3389439eee8bf016305632fb25ab",
+  "tested_algorithm_sha": "dc055f42ea9d7f5318cc52b936305cfa3c733fc2",
+  "issue": "https://github.com/JohnnyZPiggy/SAE-Framework/issues/37",
+  "status": "ENGINEERING_PASS_GPT_REVIEW_PENDING",
+  "artifacts": {
+    "benchmark.csv": {
+      "bytes": 879,
+      "sha256": "09dbb7f21c906b521d74075680d0b804948ad2f42f29cf6d57badbe552b436a6"
+    },
+    "colab-control-path-failure.json": {
+      "bytes": 485,
+      "sha256": "2e91fe6e524b3f3d3a3b3832241e5b8f7eec0e81a98e2beefa1695a625f5d657"
+    },
+    "colab-control.json": {
+      "bytes": 2636,
+      "sha256": "dac6c2fb22d7d9fe3bafc35ab783f1c28edc4ad7f5bc59b69e368c426542336e"
+    },
+    "correctness.json": {
+      "bytes": 4297,
+      "sha256": "b250ce7f72002c7583a10cf471fada49dbc79fa6db13a698fd193338fb992af5"
+    },
+    "cpu-installed-result.json": {
+      "bytes": 6525,
+      "sha256": "6e2f9bd103c18c77fceeb9fb482326d2b1481dd5b036d31c34ede9903b6850d2"
+    },
+    "cpu-result.json": {
+      "bytes": 6517,
+      "sha256": "92181f33b2cadbfe41ff533443748e64f211a4acb946dbec76b8a3c59175168f"
+    },
+    "exact-install-tests.json": {
+      "bytes": 751,
+      "sha256": "141a75adf4028ff9fa20990c3faa4ba7ab320489edf0dc36a50d6c8e985b3f87"
+    },
+    "pilot-evidence.json": {
+      "bytes": 9001,
+      "sha256": "169ca21b192c7e26d18b439d2d75a07664f2ae68ea948d24cbf577e2776b3721"
+    },
+    "summary.md": {
+      "bytes": 5144,
+      "sha256": "58c88228f7d2c436f0729c95f3519083cf01241dea12f99462cf3454dcc4c096"
+    },
+    "retry2/colab-control.json": {
+      "bytes": 5427,
+      "sha256": "ac35705484e77ce46d8138f2eabfd53a094555820a3738ee24a5f24896c59372"
+    },
+    "retry2/gpu-probe.json": {
+      "bytes": 971,
+      "sha256": "35ce702122f82ebb70854fb649e8bce61dde101493b6104024f089079abfbcaf"
+    },
+    "retry2/gpu-result.json": {
+      "bytes": 6628,
+      "sha256": "42381c12defda479886040df7b13a161326664372bbde97830a94689ee2f309f"
+    },
+    "retry2/tpu-availability.json": {
+      "bytes": 208,
+      "sha256": "c1d0f69b7fa536427eac3307e3a1058543c723972c02e6076c1d739e0b0eaa81"
+    }
+  }
+}

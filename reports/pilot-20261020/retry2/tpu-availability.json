@@ -1,0 +1,7 @@
+{
+  "status": "NOT_RUN",
+  "classification": "PROBE_ONLY",
+  "reason": "No TPU allocated in the one GPU session; TPU/XLA QR not executed",
+  "torch_xla_installed": false,
+  "tpu_environment_present": false
+}

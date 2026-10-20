@@ -1,0 +1,193 @@
+{
+  "status": "PASS",
+  "source_sha": "dc055f42ea9d7f5318cc52b936305cfa3c733fc2",
+  "classification": "EXACT_SHA_EVIDENCE_PENDING_ARCHITECT_REVIEW",
+  "utc_start": "2026-10-20T13:21:14.186190+00:00",
+  "environment": {
+    "python": "3.14.6",
+    "torch": "2.14.1+cpu",
+    "device": "cpu",
+    "hardware": "AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cuda": null,
+    "threads": 2,
+    "dtype": "float32",
+    "tf32": false,
+    "compile": "NOT_RUN; eager-only benchmark"
+  },
+  "methodology": "CPU-generated inputs, identical Omega; eager QR only timed, projection outside timing; transfer excluded; CUDA synchronized; warmups and first-call separate; same device loop/batch; no fusion claim",
+  "correctness": {
+    "status": "PASS",
+    "cases": {
+      "exact_rank16_seed42": {
+        "max_relative_residual": 4.6495810579472163e-07,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 5.960464477539062e-07
+      },
+      "exact_rank16_seed123": {
+        "max_relative_residual": 4.5615882982019684e-07,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 7.152557373046875e-07
+      },
+      "exact_rank16_seed2026": {
+        "max_relative_residual": 4.819254968424502e-07,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 5.960464477539062e-07
+      },
+      "slow_full_rank_diagnostic": {
+        "max_relative_residual": 0.6518239974975586,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 4.76837158203125e-07
+      },
+      "zero": {
+        "max_relative_residual": 0.0,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 0.0
+      },
+      "zero_sketch": {
+        "max_relative_residual": 0.7637694478034973,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 0.0
+      },
+      "singleton": {
+        "max_relative_residual": 0.0,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 0.0
+      },
+      "wide": {
+        "max_relative_residual": 2.577490363364632e-07,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 2.384185791015625e-07
+      },
+      "float64": {
+        "max_relative_residual": 5.628856412072293e-16,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 4.440892098500626e-16
+      },
+      "single_matrix": {
+        "max_relative_residual": 2.1225375235189858e-07,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 1.1920928955078125e-07
+      }
+    },
+    "edge_contract": "Zero/rank-deficient sketches: finite orthonormal completion; no rank estimate or universal accuracy bound. Nonfinite inputs outside contract."
+  },
+  "benchmark": [
+    {
+      "shape_B_m_n_rank_width": [
+        16,
+        128,
+        96,
+        16,
+        24
+      ],
+      "seed": 42,
+      "cpu_input_sha256": "8fd10333dbfdbbffaced646f9cef52a4a148f99ada91c19f65b64fd842d76c0f",
+      "correctness": {
+        "max_relative_residual": 4.6495810579472163e-07,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 5.960464477539062e-07
+      },
+      "first_call_seconds": {
+        "loop": 0.00114229999599047,
+        "batched": 0.0006586999952560291
+      },
+      "warmup_runs": 2,
+      "timed_runs": 7,
+      "timings": {
+        "loop": {
+          "median_seconds": 0.000985099992249161,
+          "min_seconds": 0.0009778999956324697,
+          "max_seconds": 0.0010126999986823648,
+          "sample_stdev_seconds": 1.2058153137035352e-05,
+          "p95_seconds": 0.0010126999986823648,
+          "samples_seconds": [
+            0.000985099992249161,
+            0.0009939000010490417,
+            0.0009824000007938594,
+            0.0009788000024855137,
+            0.0009867999906418845,
+            0.0010126999986823648,
+            0.0009778999956324697
+          ]
+        },
+        "batched": {
+          "median_seconds": 0.0006430000066757202,
+          "min_seconds": 0.0006275000050663948,
+          "max_seconds": 0.0006796000088797882,
+          "sample_stdev_seconds": 1.6753709465299647e-05,
+          "p95_seconds": 0.0006796000088797882,
+          "samples_seconds": [
+            0.0006456999981310219,
+            0.0006275000050663948,
+            0.0006399999983841553,
+            0.0006430000066757202,
+            0.0006330999894998968,
+            0.0006796000088797882,
+            0.00064820000261534
+          ]
+        }
+      },
+      "observed_loop_over_batched_speedup": 1.5320372970788625
+    },
+    {
+      "shape_B_m_n_rank_width": [
+        16,
+        512,
+        256,
+        32,
+        40
+      ],
+      "seed": 42,
+      "cpu_input_sha256": "66d1ff8f5c5aebd7d42552cdc5112f51908881592b73b7407035d5a82f4e1c5e",
+      "correctness": {
+        "max_relative_residual": 7.586646120216756e-07,
+        "max_projection_disagreement": 0.0,
+        "max_orthogonality_error": 1.1920928955078125e-06
+      },
+      "first_call_seconds": {
+        "loop": 0.005216300007305108,
+        "batched": 0.0043295999930705875
+      },
+      "warmup_runs": 2,
+      "timed_runs": 7,
+      "timings": {
+        "loop": {
+          "median_seconds": 0.005141600006027147,
+          "min_seconds": 0.005014900001697242,
+          "max_seconds": 0.005293999987770803,
+          "sample_stdev_seconds": 8.891010907155702e-05,
+          "p95_seconds": 0.005293999987770803,
+          "samples_seconds": [
+            0.005141600006027147,
+            0.005069099992397241,
+            0.005179699990549125,
+            0.005293999987770803,
+            0.005158900006790645,
+            0.005106299999170005,
+            0.005014900001697242
+          ]
+        },
+        "batched": {
+          "median_seconds": 0.004285699993488379,
+          "min_seconds": 0.00410040000861045,
+          "max_seconds": 0.004577599989715964,
+          "sample_stdev_seconds": 0.0001514075039661155,
+          "p95_seconds": 0.004577599989715964,
+          "samples_seconds": [
+            0.004288299998734146,
+            0.004267299998900853,
+            0.004204700002446771,
+            0.004401200014399365,
+            0.004577599989715964,
+            0.004285699993488379,
+            0.00410040000861045
+          ]
+        }
+      },
+      "observed_loop_over_batched_speedup": 1.1997106689313783
+    }
+  ],
+  "elapsed_seconds": 0.20549239999672864,
+  "utc_end": "2026-10-20T13:21:14.391559+00:00"
+}

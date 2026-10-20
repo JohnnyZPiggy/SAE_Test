@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "source_sha": "dc055f42ea9d7f5318cc52b936305cfa3c733fc2",
+  "classification": "PROBE_ONLY",
+  "utc_start": "2026-10-20T13:32:00.431034+00:00",
+  "environment": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu130",
+    "device": "cuda",
+    "hardware": "Tesla T4",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "cuda": "13.0",
+    "threads": 2,
+    "dtype": "float32",
+    "tf32": false,
+    "compile": "NOT_RUN; eager-only benchmark"
+  },
+  "methodology": "CPU-generated inputs, identical Omega; eager QR only timed, projection outside timing; transfer excluded; CUDA synchronized; warmups and first-call separate; same device loop/batch; no fusion claim",
+  "probe": {
+    "max_relative_residual": 1.9912778270736453e-07,
+    "max_projection_disagreement": 3.8737110230613325e-07,
+    "max_orthogonality_error": 4.172325134277344e-07
+  },
+  "elapsed_seconds": 0.9451201549999979,
+  "utc_end": "2026-10-20T13:32:01.248050+00:00"
+}

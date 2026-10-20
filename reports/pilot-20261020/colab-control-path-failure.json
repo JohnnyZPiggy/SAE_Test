@@ -1,0 +1,13 @@
+{
+  "status": "FAIL",
+  "source_sha": "dc055f42ea9d7f5318cc52b936305cfa3c733fc2",
+  "created": false,
+  "cleanup_confirmed": false,
+  "utc_start": "2026-10-20T13:21:24.499783+00:00",
+  "commands": [],
+  "error": "FileNotFoundError: [Errno 2] No such file or directory: 'colab'",
+  "cleanup_seconds": 2.0198000000526406e-05,
+  "usage_after_error": "[Errno 2] No such file or directory: 'colab'",
+  "total_seconds": 0.19800951999999938,
+  "utc_end": "2026-10-20T13:21:24.697669+00:00"
+}

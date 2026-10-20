@@ -1,0 +1,12 @@
+{
+  "source_sha": "dc055f42ea9d7f5318cc52b936305cfa3c733fc2",
+  "installation": "PASS",
+  "isolation": "Exact committed package/test bytes built in temporary directory; workspace target; existing torch dependency reused",
+  "test_exit_code": 0,
+  "test_output": "test_cpu_contract (test_range_finder.NumericalTests.test_cpu_contract) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.031s\n\nOK\n",
+  "compile_smoke": {
+    "exit_code": 0,
+    "output": "{\"status\": \"PASS\", \"backend\": \"eager\", \"fullgraph\": true, \"max_projection_abs_error\": 0.0, \"limitation\": \"Dynamo capture only; Inductor/native compiler and GPU compilation NOT RUN\"}\n"
+  },
+  "elapsed_seconds": 15.637812900007702
+}
