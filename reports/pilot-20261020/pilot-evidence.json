@@ -1,0 +1,221 @@
+{
+  "status": "ENGINEERING_PASS_GPT_REVIEW_PENDING",
+  "mode_started": "EXPLORE",
+  "mode_ended": "VALIDATE_CANDIDATE_PENDING_GPT_DECISION",
+  "framework_sha": "3fa17c605fbd3389439eee8bf016305632fb25ab",
+  "algorithm_repo": "JohnnyZPiggy/SAE_Test",
+  "tested_algorithm_sha": "dc055f42ea9d7f5318cc52b936305cfa3c733fc2",
+  "publication_sha": null,
+  "publication_sha_note": "Report cannot contain its own commit hash; exact report publication SHA is recorded in the single upstream Issue comment and final receipt.",
+  "utc_timestamps": {
+    "scientist_request": null,
+    "gpt_dispatch": null,
+    "codex_start": "2026-10-20T13:09:23+00:00",
+    "first_cpu_pass": "2026-10-20T13:17:33.473989+00:00",
+    "exact_source_cpu_pass": "2026-10-20T13:21:14.391559+00:00",
+    "first_gpu_evidence": "2026-10-20T13:32:01.248050+00:00",
+    "git_publish": null,
+    "gpt_accept": null,
+    "cleanup_verified": "2026-10-20T13:32:12.728267+00:00",
+    "report_cutoff": "2026-10-20T13:35:32.971191+00:00"
+  },
+  "duration_seconds": {
+    "total_to_report_cutoff": 1569.971191,
+    "total_including_publication": null,
+    "setup_to_first_cpu_pass": 490.473989,
+    "first_cpu_pass_latency": 490.473989,
+    "first_gpu_evidence_latency": 1358.24805,
+    "colab_allocation_lifecycle": 478.91426346300005,
+    "cleanup": 6.145751310999913,
+    "exact_local_install_test_compile": 15.637812900007702,
+    "publication": null
+  },
+  "time_source": "UTC system clocks and time.monotonic/perf_counter in subprocess controllers. Per-failure times not captured are null; no estimates. Allocation lifecycle conservatively includes new+exec+downloads+stop verification.",
+  "handoffs": {
+    "scope": "this resumed batch; prior blocked invocation separately recorded on Issue 37",
+    "scientist_to_gpt": 1,
+    "gpt_to_codex_actual": 1,
+    "codex_to_gpt_actual_at_report_cutoff": 0,
+    "human_relay_actions_actual": 1,
+    "per_attempt_approvals_actual": null,
+    "science_or_compute_signoff_requests_actual": 0,
+    "sandbox_escalation_tool_requests_at_report_cutoff": 20,
+    "sandbox_approval_limitations": "Host tool approvals were requested; actual human clicks vs persisted-rule automatic approvals are not exposed. Do not interpret as unattended zero-approval automation.",
+    "cumulative_engineer_dispatches_in_this_conversation": 2,
+    "cumulative_user_relay_commands": 2
+  },
+  "counts": {
+    "codex_repair_attempts": 5,
+    "repairs_by_failure_class": {
+      "IMPLEMENTATION": 1,
+      "DEPENDENCY": 3,
+      "TIMEOUT": 1
+    },
+    "numerical_repair_attempts": 0,
+    "host_permission_boundary_resolutions": 2,
+    "colab_sessions": 2,
+    "max_concurrent_colab_sessions": 1,
+    "new_issues": 0,
+    "new_pull_requests_at_report_cutoff": 0,
+    "failed_attempts": 7,
+    "failure_count_scope": "Seven substantive setup/experiment failures listed below; help/discovery command errors not counted as experimental attempts."
+  },
+  "devices": {
+    "cpu": "PASS",
+    "gpu": "PASS; exact-source evidence pending GPT review",
+    "tpu": "NOT_RUN"
+  },
+  "math_check": "SCOPED_HYPOTHESIS_DOCUMENTED; independent GPT RESEARCH_READY/acceptance NOT_RUN",
+  "numeric_metrics": {
+    "cpu": {
+      "max_rank16_relative_residual": 4.819254968424502e-07,
+      "rank16_limit": 0.001,
+      "case_groups": 10
+    },
+    "gpu": {
+      "max_rank16_relative_residual": 4.510878568453336e-07,
+      "rank16_limit": 0.001,
+      "case_groups": 10
+    }
+  },
+  "performance_metrics": {
+    "cpu": [
+      {
+        "shape_B_m_n_rank_width": [
+          16,
+          128,
+          96,
+          16,
+          24
+        ],
+        "loop_median_seconds": 0.0017103999998653308,
+        "batched_median_seconds": 0.0012573999993037432,
+        "observed_loop_over_batched_speedup": 1.3602672187151472
+      },
+      {
+        "shape_B_m_n_rank_width": [
+          16,
+          512,
+          256,
+          32,
+          40
+        ],
+        "loop_median_seconds": 0.005419499997515231,
+        "batched_median_seconds": 0.004443799989530817,
+        "observed_loop_over_batched_speedup": 1.2195643391428674
+      }
+    ],
+    "gpu": [
+      {
+        "shape_B_m_n_rank_width": [
+          16,
+          128,
+          96,
+          16,
+          24
+        ],
+        "loop_median_seconds": 0.003701198000015893,
+        "batched_median_seconds": 0.0016415649999999005,
+        "observed_loop_over_batched_speedup": 2.2546764825127954
+      },
+      {
+        "shape_B_m_n_rank_width": [
+          16,
+          512,
+          256,
+          32,
+          40
+        ],
+        "loop_median_seconds": 0.005414448999999877,
+        "batched_median_seconds": 0.0048822130000019115,
+        "observed_loop_over_batched_speedup": 1.109015317438579
+      }
+    ]
+  },
+  "failure_reasons": [
+    {
+      "category": "AUTH",
+      "stage": "Git clone",
+      "reason": "Sandbox DNS blocked GitHub",
+      "resolution": "Resolved by authorized escalated clone",
+      "elapsed_seconds": 0.8849205,
+      "repair_kind": "host_permission_boundary"
+    },
+    {
+      "category": "AUTH",
+      "stage": "WSL discovery",
+      "reason": "WSL enumeration ACCESS_DENIED in sandbox",
+      "resolution": "Resolved by authorized escalated WSL",
+      "elapsed_seconds": 0.9402636,
+      "repair_kind": "host_permission_boundary"
+    },
+    {
+      "category": "IMPLEMENTATION",
+      "stage": "Snapshot verification",
+      "reason": "git archive honored Windows CRLF conversion; byte comparison failed",
+      "resolution": "Re-extracted all 90 blobs via git show, exact-byte comparison passed",
+      "elapsed_seconds": null,
+      "repair_attempts": 1
+    },
+    {
+      "category": "DEPENDENCY",
+      "stage": "Local package install 1",
+      "reason": "pip sandbox temporary build tracker permission denied",
+      "resolution": "Retried authorized install into workspace target",
+      "elapsed_seconds": null,
+      "repair_attempts": 1
+    },
+    {
+      "category": "DEPENDENCY",
+      "stage": "Local package install 2",
+      "reason": "WinError32 in Dropbox wheel staging",
+      "resolution": "Build from temporary directory outside Dropbox, workspace install succeeded",
+      "elapsed_seconds": 4.838566,
+      "repair_attempts": 1
+    },
+    {
+      "category": "DEPENDENCY",
+      "stage": "Colab control preallocation",
+      "reason": "Non-login WSL shell could not find colab",
+      "resolution": "Login shell; no allocation occurred on failed invocation",
+      "elapsed_seconds": 0.19800951999999938,
+      "repair_attempts": 1
+    },
+    {
+      "category": "TIMEOUT",
+      "stage": "GPU attempt 1",
+      "reason": "exec exceeded 440s external timeout; IDLE status and only creation event observed. Exact underlying cause unproven",
+      "resolution": "Released session, inspected installed CLI, retried with process-local bounded HTTP requests, stack diagnostics and short kernel smoke. Retry passed; cannot attribute success uniquely to wrapper vs transient recovery",
+      "elapsed_seconds": 440.04401093399997,
+      "repair_attempts": 1
+    }
+  ],
+  "publication": "PREPARED; verified receipt will be in upstream Issue comment",
+  "colab_cleanup": "PASS; both allocations stopped and server lists no active sessions",
+  "billing": {
+    "new_purchases": 0,
+    "settings_changes": 0,
+    "entitlement": "Existing prepaid Colab units only",
+    "balance_before": 62.67,
+    "balance_after_first_observed": 62.63,
+    "balance_before_retry": 62.54,
+    "balance_after_retry": 62.54,
+    "note": "Provider accounting changed between checks; balance deltas are observations, not an exact charge/cost attribution."
+  },
+  "limitations": [
+    "No TPU allocation or QR test",
+    "No independent GPT science/merge decision; no self-merge",
+    "Compile smoke eager backend only; no Inductor/CUDA compilation",
+    "Final review added an explicit NumPy dependency in metadata; all algorithm/test Python files remain byte-identical to tested SHA. Dependency resolution in a fully empty environment was not run",
+    "Original dirty EXPLORE run classification field was overly broad; excluded from accepted exact-source numerical/performance tables",
+    "First-call timings follow correctness calls and are not fresh-process GPU startup measurements",
+    "No legacy SAE efficiency baseline; measured batch is not proof of a workflow speedup"
+  ],
+  "orchestration_provenance": {
+    "scripts\\colab_control.py": "81df7b6214e4deb1614027e060204fec0b5a116982bb55f095bfed8115d9a816",
+    "scripts\\colab_entry.py": "f5370de86c9812758792662410b6d5304ac3f3cb96d7802a9bc75df26491c380",
+    "scripts\\colab_remote.py": "4e387445faa1a07ce953b1a7ecb2ed0408e771e57473f8e23ef47bcbefbd154e",
+    "scripts\\kernel_smoke.py": "f6d1794ffa24033c720da453387579678f358fb72707e6d0c6adf72bf81c4329"
+  },
+  "source_integrity": "Tracked package/test bytes match tested candidate. Source checks used exact git object bytes; local generated reports made the overall tree dirty and are not represented as pristine source checkout."
+}

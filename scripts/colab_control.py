@@ -11,6 +11,7 @@ import time
 p = argparse.ArgumentParser()
 p.add_argument('--source-sha', required=True)
 p.add_argument('--out', required=True)
+p.add_argument('--diagnostic', action='store_true')
 args = p.parse_args()
 out = Path(args.out).resolve()
 out.mkdir(parents=True, exist_ok=True)
@@ -30,10 +31,16 @@ def cli(*cmd, timeout=30, check=True, cleanup=False):
             raise TimeoutError('Allocation deadline reached')
     t = time.monotonic()
     try:
-        r = subprocess.run(['colab','--auth=oauth2',*cmd], text=True, capture_output=True, timeout=timeout)
+        prefix = (['/home/zhangru/.local/share/uv/tools/google-colab-cli/bin/python',
+                   str(Path(__file__).with_name('colab_entry.py'))]
+                  if args.diagnostic and cmd[0] == 'exec' else ['colab'])
+        r = subprocess.run([*prefix,'--auth=oauth2',*cmd], text=True, capture_output=True, timeout=timeout)
         code, output = r.returncode, r.stdout+r.stderr
-    except subprocess.TimeoutExpired:
-        code, output = -1, 'TIMEOUT; captured partial output omitted'
+    except subprocess.TimeoutExpired as exc:
+        partial = (exc.stdout or b'') + (exc.stderr or b'')
+        if isinstance(partial, bytes):
+            partial = partial.decode(errors='replace')
+        code, output = -1, 'TIMEOUT\n' + partial
     # Keep only sanitized execution evidence; never publish auth/session URLs.
     output = re.sub(r'https?://\S+', '[URL_REDACTED]', output)
     output = re.sub(r'(?i)((?:access_token|refresh_token|authorization|token|code)[\s"\x27:=]+)\S+', r'\1[REDACTED]', output)
@@ -60,6 +67,10 @@ try:
     deadline = allocation_start + 600
     cli('new','-s',session,'--gpu','T4',timeout=120)
     report['created'] = True
+    if args.diagnostic:
+        _, smoke = cli('exec','-s',session,'-f',str(Path(__file__).with_name('kernel_smoke.py')),
+                       '--timeout','30',timeout=75)
+        assert 'KERNEL_REACHABLE' in smoke, 'Kernel smoke did not execute'
     _, execution = cli('exec','-s',session,'-f',str(Path(__file__).with_name('colab_remote.py')),
                        '--timeout','420','--env','SAE_SOURCE_SHA='+args.source_sha,timeout=440)
     for name in ('gpu-probe.json','gpu-result.json','tpu-availability.json'):
