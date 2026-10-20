@@ -1,0 +1,15 @@
+{
+  "classification": "LOCAL_TESTS_ONLY_NO_COLAB_ALLOCATION",
+  "source_sha": "46f5bbe1685d7242b96c3d35337a3dd2ca39f41b",
+  "platform": "WSL Ubuntu",
+  "python": "3.12.3",
+  "suites": [
+    {"pattern": "test_environment_preflight.py", "tests": 9, "unittest_reported_seconds": 0.498, "status": "PASS"},
+    {"pattern": "test_colab_control.py", "tests": 16, "unittest_reported_seconds": 5.357, "status": "PASS"}
+  ],
+  "status": "PASS",
+  "new_colab_sessions": 0,
+  "live_cpu_gpu_tpu_numerical_runs": "NOT_RUN",
+  "pip_install": "MOCKED_IN_TESTS; NOT_RUN_IN_REAL_PREFLIGHT",
+  "live_kernel_workload_cleanup": "NOT_RUN"
+}

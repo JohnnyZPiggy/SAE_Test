@@ -1,0 +1,21 @@
+test_existing_output_not_overwritten (test_colab_control.ControllerTests.test_existing_output_not_overwritten) ... ok
+test_existing_sessions_not_touched (test_colab_control.ControllerTests.test_existing_sessions_not_touched) ... ok
+test_expired_work_budget_still_stops (test_colab_control.ControllerTests.test_expired_work_budget_still_stops) ... ok
+test_failed_cleanup_never_passes (test_colab_control.ControllerTests.test_failed_cleanup_never_passes) ... ok
+test_hash_mismatch (test_colab_control.ControllerTests.test_hash_mismatch) ... ok
+test_interrupt_stops (test_colab_control.ControllerTests.test_interrupt_stops) ... ok
+test_partial_new_failure_stops (test_colab_control.ControllerTests.test_partial_new_failure_stops) ... ok
+test_preflight_failure_keeps_timed_child_report (test_colab_control.ControllerTests.test_preflight_failure_keeps_timed_child_report) ... ok
+test_preflight_only_never_calls_provider (test_colab_control.ControllerTests.test_preflight_only_never_calls_provider) ... ok
+test_probe_failure_skips_work_and_cleans_up (test_colab_control.ControllerTests.test_probe_failure_skips_work_and_cleans_up) ... ok
+test_probe_timeout_has_short_bound (test_colab_control.ControllerTests.test_probe_timeout_has_short_bound) ... ok
+test_quota_blocks_allocation (test_colab_control.ControllerTests.test_quota_blocks_allocation) ... ok
+test_real_local_child_timeout_still_cleans_up (test_colab_control.ControllerTests.test_real_local_child_timeout_still_cleans_up) ... ok
+test_success_defaults_to_probe_before_work_and_download (test_colab_control.ControllerTests.test_success_defaults_to_probe_before_work_and_download) ... ok
+test_unavailable_cli_blocks_before_provider (test_colab_control.ControllerTests.test_unavailable_cli_blocks_before_provider) ... ok
+test_work_hang_preserves_cleanup_reserve (test_colab_control.ControllerTests.test_work_hang_preserves_cleanup_reserve) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 5.185s
+
+OK
