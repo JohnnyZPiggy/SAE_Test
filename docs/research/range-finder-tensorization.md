@@ -1,0 +1,13 @@
+# Range finder: bounded hypothesis for Issue 37
+
+Source: [Halko, Martinsson, Tropp, SIAM Review 2011](https://arxiv.org/abs/0909.4061), randomized range finding, not a novelty claim. This is an engineering fixture; independent GPT Mentor/Architect readiness and acceptance remain pending.
+
+For each batch item A_b (m,n), draw Gaussian Omega_b (n,l), l=k+p <= min(m,n). Y_b[i,j]=sum_t A_b[i,t] Omega_b[t,j]. Reduced QR returns Q_b (m,l); project P_b A_b = Q_b(Q_b^T A_b). Stacking independent items is exactly batched matmul followed by batched QR in exact arithmetic, subject to different floating-point kernels. QR bases have sign ambiguity and rank-deficient completions need not agree; compare reconstructed A, not Q entries or the full completion projector.
+
+If A has exact rank k and V_k^T Omega has row rank k, range(A Omega)=range(A) in exact arithmetic. Gaussian sketches achieve this with probability one in exact arithmetic; finite precision and conditioning still matter. l>k makes the sketch rank deficient: extra QR columns are arbitrary completions. No numerical-rank estimation, differentiability guarantee, power iterations or universal 1e-3 bound is claimed. Full-rank slow spectra are diagnostics. Zero A gives zero reconstructed A; zero Omega cannot recover a nonzero A. Inputs are finite real float32/64, matching device/batch, no implicit broadcast; sketch width in [1,min(m,n)]. Empty batch is allowed, empty matrix/sketch rejected.
+
+Work per item O(m n l + m l^2), storage O(mn + nl + ml). Batching changes scheduling, not arithmetic complexity or operator fusion. QR can be the bottleneck; no positive speedup assumed. Reference: Python loop over per-item matmul/QR. Candidate: native torch batched matmul/QR. Fallback: loop on the same device. Compare identical CPU-generated A/Omega, projection residual, finite values and orthogonality; test exact rank16 with p8 and tolerance 1e-3, three seeds, slow full-rank, zero/sketch, singleton, wide, float64, empty batch, invalid dimensions/dtype. CUDA synchronization surrounds timings; no transfer included, cold call/warmup separate. TPU requires a separate real probe.
+
+Ecosystem: NATIVE_REUSE of installed torch.matmul and torch.linalg.qr; no third-party solver or copied upstream implementation. Official API: https://docs.pytorch.org/docs/stable/generated/torch.linalg.qr.html. Local torch 2.14.1+cpu inspected. Package supports eager torch >=2.2 syntactically; only recorded runtime versions are tested. Compile is optional and separately reported.
+
+Engineering status: EXPLORE scoped hypothesis; numerical evidence and exact SHA may support VALIDATE candidate collection, but Codex does not self-approve scientific acceptance or merge.
